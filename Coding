@@ -1,0 +1,20 @@
+int LDR_PIN=10;
+int RELAY_PIN=6;
+void setup() {
+  pinMode(LDR_PIN,INPUT);
+  pinMode(RELAY_PIN,OUTPUT);
+  Serial.begin(9600);
+}
+void loop() {
+  int lightValue=digitalRead(LDR_PIN);
+  Serial.println(lightValue);
+  if (lightValue ==0)
+   {
+    digitalWrite(RELAY_PIN,HIGH);
+  }
+  else 
+  {
+    digitalWrite(RELAY_PIN,LOW);
+  }
+  delay(100);
+}
